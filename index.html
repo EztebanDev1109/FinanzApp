@@ -1,0 +1,366 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO básico -->
+    <title>FinanzApp — Control de Finanzas Personales</title>
+    <meta name="description" content="Gestiona tus ingresos, gastos, presupuestos y metas de ahorro en un solo lugar. Tu app de finanzas personales, simple y privada.">
+    <meta name="keywords" content="finanzas personales, presupuesto, ahorro, control de gastos, metas financieras">
+    <meta name="author" content="FinanzApp">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#16a34a">
+    <meta name="color-scheme" content="light">
+
+    <!-- Open Graph (redes sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FinanzApp">
+    <meta property="og:title" content="FinanzApp — Control de Finanzas Personales">
+    <meta property="og:description" content="Gestiona tus ingresos, gastos, presupuestos y metas de ahorro en un solo lugar. Simple, rápido y privado.">
+    <meta property="og:image" content="/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Vista del dashboard de FinanzApp">
+    <meta property="og:url" content="https://finanzapp.com">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FinanzApp — Control de Finanzas Personales">
+    <meta name="twitter:description" content="Gestiona tus ingresos, gastos, presupuestos y metas de ahorro en un solo lugar.">
+    <meta name="twitter:image" content="/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Vista del dashboard de FinanzApp">
+
+    <!-- PWA / App -->
+    <meta name="application-name" content="FinanzApp">
+    <meta name="apple-mobile-web-app-title" content="FinanzApp">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://finanzapp.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Datos estructurados (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "FinanzApp",
+        "description": "Aplicación de finanzas personales para gestionar ingresos, gastos, presupuestos y metas de ahorro.",
+        "url": "https://finanzapp.com",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "es-CO",
+        "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "COP"
+        }
+    }
+    </script>
+    </head>
+    <body>
+    <!-- Hamburguesa (solo mobile) -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menú de navegación">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+    <!-- Overlay oscuro para cerrar sidebar en mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+        <div class="logo-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        FinanzApp
+        </div>
+        <nav aria-label="Navegación principal">
+        <div class="nav-item active" data-page="dashboard" role="button" tabindex="0" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Dashboard
+        </div>
+        <div class="nav-item" data-page="transacciones" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+            Transacciones
+        </div>
+        <div class="nav-item" data-page="presupuestos" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Presupuestos
+        </div>
+        <div class="nav-item" data-page="metas" role="button" tabindex="0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Metas de Ahorro
+        </div>
+        </nav>
+        <div class="sidebar-foot">Datos guardados localmente</div>
+    </div>
+
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section class="page active" id="page-dashboard" aria-labelledby="title-dashboard">
+        <div class="page-header">
+            <div>
+            <h1 class="page-title" id="title-dashboard">Dashboard</h1>
+            <p class="page-sub">Resumen de tus finanzas personales</p>
+            </div>
+        </div>
+        <div class="stat-grid">
+            <div class="stat-card">
+            <div class="stat-label">Ingresos</div>
+            <div class="stat-icon si-green"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div class="stat-value stat-green" id="d-ingresos" aria-label="Total de ingresos">$0.00</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-label">Gastos</div>
+            <div class="stat-icon si-red"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
+            <div class="stat-value stat-red" id="d-gastos" aria-label="Total de gastos">$0.00</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-label">Balance</div>
+            <div class="stat-icon si-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+            <div class="stat-value stat-blue" id="d-balance" aria-label="Balance total">$0.00</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-label">Ahorros</div>
+            <div class="stat-icon si-orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div class="stat-value stat-orange" id="d-ahorros" aria-label="Total de ahorros">$0.00</div>
+            </div>
+        </div>
+        <div class="two-col">
+            <div class="card">
+            <h2 class="card-title">Gastos por Categoría</h2>
+            <div class="donut-wrap">
+                <canvas id="donut-canvas" width="220" height="220" role="img" aria-label="Gráfico de gastos por categoría"></canvas>
+                <div class="donut-legend" id="donut-legend"></div>
+            </div>
+            </div>
+            <div class="card">
+            <h2 class="card-title">Resumen de Presupuestos</h2>
+            <div class="budget-list" id="d-budget-list"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Transacciones Recientes</h2>
+            <div id="d-recent-list"></div>
+        </div>
+        </section>
+
+        <!-- TRANSACCIONES -->
+        <section class="page" id="page-transacciones" aria-labelledby="title-transacciones">
+        <div class="page-header">
+            <div>
+            <h1 class="page-title" id="title-transacciones">Transacciones</h1>
+            <p class="page-sub">Registra y gestiona tus ingresos y gastos</p>
+            </div>
+            <button class="btn-primary" onclick="openModal('tx')" aria-label="Agregar nueva transacción">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nueva Transacción
+            </button>
+        </div>
+        <div class="tx-list" id="tx-list" role="list"></div>
+        </section>
+
+        <!-- PRESUPUESTOS -->
+        <section class="page" id="page-presupuestos" aria-labelledby="title-presupuestos">
+        <div class="page-header">
+            <div>
+            <h1 class="page-title" id="title-presupuestos">Presupuestos</h1>
+            <p class="page-sub">Establece límites de gasto por categoría</p>
+            </div>
+            <button class="btn-primary" onclick="openModal('budget')" aria-label="Agregar nuevo presupuesto">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nuevo Presupuesto
+            </button>
+        </div>
+        <div class="budget-grid" id="budget-grid"></div>
+        </section>
+
+        <!-- METAS -->
+        <section class="page" id="page-metas" aria-labelledby="title-metas">
+        <div class="page-header">
+            <div>
+            <h1 class="page-title" id="title-metas">Metas de Ahorro</h1>
+            <p class="page-sub">Establece y sigue tus objetivos financieros</p>
+            </div>
+            <button class="btn-primary" onclick="openModal('meta')" aria-label="Agregar nueva meta de ahorro">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nueva Meta
+            </button>
+        </div>
+        <div class="metas-grid" id="metas-grid"></div>
+        </section>
+
+    </main>
+
+    <!-- MODAL TX -->
+    <div class="modal-overlay" id="modal-tx" role="dialog" aria-modal="true" aria-labelledby="modal-tx-title">
+        <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-tx-title">Nueva Transacción</div>
+            <button class="modal-close" onclick="closeModal('tx')" aria-label="Cerrar modal">×</button>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="tx-desc">Descripción</label>
+            <input class="form-input" id="tx-desc" placeholder="Ej: Supermercado" autocomplete="off">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+            <label class="form-label" for="tx-monto">Monto</label>
+            <div class="monto-wrap">
+                <span class="monto-prefix" aria-hidden="true">$</span>
+                <input class="form-input monto-input" id="tx-monto" type="text" inputmode="numeric" placeholder="50.000" oninput="previewCOP(this,'tx-preview')" aria-describedby="tx-preview">
+            </div>
+            <div class="monto-preview" id="tx-preview" aria-live="polite"></div>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="tx-tipo">Tipo</label>
+            <select class="form-select" id="tx-tipo">
+                <option value="gasto">Gasto</option>
+                <option value="ingreso">Ingreso</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+            <label class="form-label" for="tx-cat">Categoría</label>
+            <select class="form-select" id="tx-cat">
+                <option value="Alimentación">Alimentación</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Entretenimiento">Entretenimiento</option>
+                <option value="Servicios">Servicios</option>
+                <option value="Compras">Compras</option>
+                <option value="Salud">Salud</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Salario">Salario</option>
+                <option value="Otro">Otro</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="tx-fecha">Fecha</label>
+            <input class="form-input" id="tx-fecha" type="date">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeModal('tx')">Cancelar</button>
+            <button class="btn-save" onclick="saveTx()">Guardar</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- MODAL BUDGET -->
+    <div class="modal-overlay" id="modal-budget" role="dialog" aria-modal="true" aria-labelledby="modal-budget-title">
+        <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-budget-title">Nuevo Presupuesto</div>
+            <button class="modal-close" onclick="closeModal('budget')" aria-label="Cerrar modal">×</button>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="b-cat">Categoría</label>
+            <select class="form-select" id="b-cat">
+            <option value="Alimentación">Alimentación</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Entretenimiento">Entretenimiento</option>
+            <option value="Servicios">Servicios</option>
+            <option value="Compras">Compras</option>
+            <option value="Salud">Salud</option>
+            <option value="Otro">Otro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="b-limite">Límite mensual</label>
+            <div class="monto-wrap">
+            <span class="monto-prefix" aria-hidden="true">$</span>
+            <input class="form-input monto-input" id="b-limite" type="text" inputmode="numeric" placeholder="600.000" oninput="previewCOP(this,'b-preview')" aria-describedby="b-preview">
+            </div>
+            <div class="monto-preview" id="b-preview" aria-live="polite"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeModal('budget')">Cancelar</button>
+            <button class="btn-save" onclick="saveBudget()">Guardar</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- MODAL META -->
+    <div class="modal-overlay" id="modal-meta" role="dialog" aria-modal="true" aria-labelledby="modal-meta-title">
+        <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="modal-meta-title">Nueva Meta de Ahorro</div>
+            <button class="modal-close" onclick="closeModal('meta')" aria-label="Cerrar modal">×</button>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="m-nombre">Nombre de la meta</label>
+            <input class="form-input" id="m-nombre" placeholder="Ej: Fondo de emergencia" autocomplete="off">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+            <label class="form-label" for="m-total">Meta total</label>
+            <div class="monto-wrap">
+                <span class="monto-prefix" aria-hidden="true">$</span>
+                <input class="form-input monto-input" id="m-total" type="text" inputmode="numeric" placeholder="10.000.000" oninput="previewCOP(this,'m-total-prev')" aria-describedby="m-total-prev">
+            </div>
+            <div class="monto-preview" id="m-total-prev" aria-live="polite"></div>
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="m-actual">Ya ahorrado</label>
+            <div class="monto-wrap">
+                <span class="monto-prefix" aria-hidden="true">$</span>
+                <input class="form-input monto-input" id="m-actual" type="text" inputmode="numeric" placeholder="0" oninput="previewCOP(this,'m-actual-prev')" aria-describedby="m-actual-prev">
+            </div>
+            <div class="monto-preview" id="m-actual-prev" aria-live="polite"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="m-fecha">Fecha límite</label>
+            <input class="form-input" id="m-fecha" type="date">
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeModal('meta')">Cancelar</button>
+            <button class="btn-save" onclick="saveMeta()">Guardar</button>
+        </div>
+        </div>
+    </div>
+
+    <!-- MODAL AGREGAR A META -->
+    <div class="modal-overlay" id="modal-agregar" role="dialog" aria-modal="true" aria-labelledby="ag-title">
+        <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title" id="ag-title">Agregar Ahorro</div>
+            <button class="modal-close" onclick="closeModal('agregar')" aria-label="Cerrar modal">×</button>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="ag-monto">Monto a agregar</label>
+            <div class="monto-wrap">
+            <span class="monto-prefix" aria-hidden="true">$</span>
+            <input class="form-input monto-input" id="ag-monto" type="text" inputmode="numeric" placeholder="50.000" oninput="previewCOP(this,'ag-preview')" aria-describedby="ag-preview">
+            </div>
+            <div class="monto-preview" id="ag-preview" aria-live="polite"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeModal('agregar')">Cancelar</button>
+            <button class="btn-save" onclick="saveAgregar()">Agregar</button>
+        </div>
+        </div>
+    </div>
+
+    <script src="js/app.js" defer></script>
+    </body>
+    </html>
